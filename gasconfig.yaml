@@ -1,0 +1,12 @@
+gasservice:
+  # gateway port
+  port: 6992
+  # fabric engine connection url
+  fabengine: http://10.10.7.30:4992
+
+GasServicePort: 6992
+BaasFabricEngine: http://10.10.7.30:4992
+BaasChannelArtifactsPath: ./channel-artifacts/
+ConfigFileName: "c1.yaml"
+ChannelId: "c1"
+chainName: "gaschain"
