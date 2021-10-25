@@ -6,8 +6,6 @@
 tmp/
 .air.conf
 dbstore
-nfsshared/baas-artifacts/
-nfsshared/baas-fabric-data/
-nfsshared/baas-k8s-config/
 .vscode/
 channel-artifacts/
+vendor/
