@@ -74,6 +74,7 @@ func (a *ApiController) ChaincodeQuery(ctx *gin.Context) {
 	ccReq.Peers = DefaultInvokePeers
 
 	ccReq.FunctionName = util.FirstUpper(argJson.Event)
+	ccReq.Args = argJson.Args
 	// ccReq.Args = append(ccReq.Args, argJson.Args)
 
 	logger.Info("ccReq:", ccReq)
@@ -112,6 +113,7 @@ func (a *ApiController) ChaincodeInvoke(ctx *gin.Context) {
 
 	ccReq.Peers = DefaultInvokePeers
 	ccReq.FunctionName = util.FirstUpper(argJson.Event)
+	ccReq.Args = argJson.Args
 	// ccReq.Args = append(ccReq.Args, argJson.Args)
 
 	logger.Info("ccReq:", ccReq)
