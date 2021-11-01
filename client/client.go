@@ -100,8 +100,9 @@ func generate() {
 
 func NewClient(ccc SdkChlClient) (SdkClient, error) {
 
-	fmt.Println("gm client...")
-	client := gmClient{}
+	fmt.Println("std client...")
+	// client := gmClient{}
+	client := Client{}
 	/// 赋值
 	client.ConfigFile = ccc.ConfigFile
 	client.ChannelID = ccc.ChannelID
