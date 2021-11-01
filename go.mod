@@ -1,4 +1,4 @@
-module gas-fabric-service
+module fabric-sdk-service
 
 go 1.14
 

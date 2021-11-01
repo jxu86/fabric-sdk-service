@@ -1,0 +1,8 @@
+
+ServicePort: 8001
+BaasFabricEngine: http://10.186.144.2:4991
+BaasChannelArtifactsPath: ./channel-artifacts/
+ConfigFileName: "c1.yaml"
+ChannelId: "c1"
+chainName: "test"
+DefaultChaincode: "fabcar"

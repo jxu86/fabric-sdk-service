@@ -53,8 +53,9 @@ type FabricChannel struct {
 }
 
 type ArgJson struct {
-	Event string `json:"event"`
-	Args  string `json:"args"`
+	ChaincodeId string `json:"ccid"`
+	Event       string `json:"event"`
+	Args        string `json:"args"`
 }
 
 type FabricChaincode struct {
@@ -70,11 +71,10 @@ type FabricChaincode struct {
 	ArgJson        ArgJson  `json:"argJson"`
 }
 
-
 //ChaincodeCallRequest
 type ChaincodeCallRequest struct {
 	AreaCode     string      `json:"areaCode,omitempty"`
-	ChaincodeId  string      `json:"ccId,omitempty"`
+	ChaincodeId  string      `json:"ccid,omitempty"`
 	FunctionName string      `json:"funcName,omitempty"`
 	DocType      string      `json:"docType,omitempty"`
 	Args         []string    `json:"args,omitempty"`

@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"gas-fabric-service/common/gintool"
-	"gas-fabric-service/common/log"
-	"gas-fabric-service/service"
+	"fabric-sdk-service/common/gintool"
+	"fabric-sdk-service/common/log"
+	"fabric-sdk-service/service"
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,8 +3,8 @@ package client
 import (
 	"encoding/json"
 	"errors"
+	"fabric-sdk-service/config"
 	"fmt"
-	"gas-fabric-service/config"
 	"io/ioutil"
 	"math/rand"
 	"net/http"
@@ -16,7 +16,7 @@ import (
 
 var (
 	ChannelId = "c1"
-	chainName = "gaschain"
+	chainName = "tchain"
 
 	cliNum    = 1
 	clients   []SdkClient
@@ -75,7 +75,6 @@ func init() {
 		cfgTemplate.ConfigBytes = cfgByte
 	} else {
 		// cfgTemplate.ConfigFile = "./channel-artifacts/" + configFileName
-
 		cfgTemplate.ConfigFile = config.Config.GetString("BaasChannelArtifactsPath") + configFileName
 		cfgTemplate.ChannelID = ChannelId
 		cfgTemplate.UserName = USERNAME
@@ -115,38 +114,6 @@ func NewClient(ccc SdkChlClient) (SdkClient, error) {
 	}
 
 	return &client, nil
-
-	// if os.Getenv("FABRIC_SDK_MODE") == "gm" {
-	// 	fmt.Println("gm client...")
-	// 	client := gmClient{}
-	// 	/// 赋值
-	// 	client.ConfigFile = ccc.ConfigFile
-	// 	client.ChannelID = ccc.ChannelID
-	// 	client.UserName = ccc.UserName
-	// 	client.Org = ccc.Org
-
-	// 	err := client.Initialize(ccc.ConfigBytes)
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-
-	// 	return &client, nil
-	// } else {
-	// 	fmt.Println("normal client...")
-	// 	client := Client{}
-	// 	/// 赋值
-	// 	client.ConfigFile = ccc.ConfigFile
-	// 	client.ChannelID = ccc.ChannelID
-	// 	client.UserName = ccc.UserName
-	// 	client.Org = ccc.Org
-
-	// 	err := client.Initialize(ccc.ConfigBytes)
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-
-	// 	return &client, nil
-	// }
 }
 
 func clientFactory(idx int) (SdkClient, error) {

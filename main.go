@@ -1,12 +1,13 @@
 package main
 
 import (
-	"gas-fabric-service/common/gintool"
-	"gas-fabric-service/config"
-	"gas-fabric-service/controller"
-	"gas-fabric-service/service"
-	"github.com/gin-gonic/gin"
+	"fabric-sdk-service/common/gintool"
+	"fabric-sdk-service/config"
+	"fabric-sdk-service/controller"
+	"fabric-sdk-service/service"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 	// "strings"
 )
 
@@ -26,26 +27,11 @@ func main() {
 	api := router.Group("/api")
 	{
 		api.GET("/test", apiController.Test)
-
-		api.POST("/gas/transaction/getTypes", apiController.GetTypes)
-		api.GET("/gas/transaction/getTypes", apiController.GetTypes)
-		api.POST("/gas/transaction/summary", apiController.TransactionSummary)
-		api.POST("/gas/transaction/detail", apiController.TransactionDetail)
-
 		api.POST("/chaincode/query", apiController.ChaincodeQuery)
-		api.POST("/chaincode/invokegas", apiController.ChaincodeInvokeGas)
-		api.POST("/chaincode/invokeBatch", apiController.ChaincodeInvokeBatchGas)
-
-		api.GET("/gas/transaction/getStatus", apiController.TransactionStatus)
-		api.POST("/gas/transaction/getStatusBatch", apiController.TransactionStatusBatch)
+		api.POST("/chaincode/invoke", apiController.ChaincodeInvoke)
 	}
 
-	// dispatch := map[string]func(string) string{
-	// 	"ttt": test,
-	// }
-	// dispatch["ttt"]("abc")
-
-	router.Run(":" + config.Config.GetString("GasServicePort"))
+	router.Run(":" + config.Config.GetString("ServicePort"))
 }
 
 func Cors() gin.HandlerFunc {

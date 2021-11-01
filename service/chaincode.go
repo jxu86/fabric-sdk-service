@@ -1,8 +1,8 @@
 package service
 
 import (
-	"gas-fabric-service/client"
-	"gas-fabric-service/model"
+	"fabric-sdk-service/client"
+	"fabric-sdk-service/model"
 )
 
 type ChaincodeService struct {
@@ -54,10 +54,6 @@ func (l *ChaincodeService) InvokeChaincode(ccReq model.ChaincodeCallRequest) (in
 	if err != nil {
 		return nil, err
 	}
-
-	// res := map[string]interface{}{
-	// 	"txId": string(resp.TransactionID),
-	// }
 
 	return string(resp.TransactionID), nil
 }

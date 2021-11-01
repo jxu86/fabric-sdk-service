@@ -1,7 +1,7 @@
 package config
 
 import (
-	"gas-fabric-service/common/log"
+	"fabric-sdk-service/common/log"
 	"os"
 	"strings"
 
@@ -11,7 +11,7 @@ import (
 
 var Config *viper.Viper
 
-var logger = log.GetLogger("gas.config", log.INFO)
+var logger = log.GetLogger("serveice.config", log.INFO)
 
 func init() {
 	go watchConfig()
@@ -31,7 +31,7 @@ func watchConfig() {
 
 //加载配置
 func loadConfig() {
-	viper.SetConfigName("gasconfig") // name of kubeconfig file
+	viper.SetConfigName("config")    // name of kubeconfig file
 	viper.AddConfigPath(".")         // optionally look for kubeconfig in the working directory
 	viper.AddConfigPath("/etc/baas") // path to look for the kubeconfig file in
 	err := viper.ReadInConfig()      // Find and read the feconfig.yaml file
@@ -49,7 +49,7 @@ func loadConfig() {
 
 func loadEnv() {
 	replaces := []string{
-		"GasServicePort",
+		"ServicePort",
 		"BaasFabricEngine",
 		"BaasChannelArtifactsPath",
 		"ConfigFileName",

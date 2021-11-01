@@ -5,8 +5,8 @@ import (
 	"strings"
 	"io/ioutil"
 	"net/url"
-	"gas-fabric-service/common/log"
-	"gas-fabric-service/common/json"
+	"fabric-sdk-service/common/log"
+	"fabric-sdk-service/common/json"
 )
 
 var logger = log.GetLogger("httputil", log.ERROR)

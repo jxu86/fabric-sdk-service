@@ -1,10 +1,10 @@
 package service
 
 import (
-	"gas-fabric-service/common/httputil"
-	"gas-fabric-service/common/log"
-	"gas-fabric-service/config"
-	"gas-fabric-service/model"
+	"fabric-sdk-service/common/httputil"
+	"fabric-sdk-service/common/log"
+	"fabric-sdk-service/config"
+	"fabric-sdk-service/model"
 )
 
 var logger = log.GetLogger("service", log.ERROR)

@@ -2,7 +2,7 @@ package gintool
 
 import (
 	"bytes"
-	"gas-fabric-service/common/log"
+	"fabric-sdk-service/common/log"
 	"github.com/gin-gonic/gin"
 	"time"
 )
