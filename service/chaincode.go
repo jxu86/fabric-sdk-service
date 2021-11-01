@@ -44,7 +44,7 @@ func (l *ChaincodeService) InvokeChaincode(ccReq model.ChaincodeCallRequest) (in
 		byteArgs = append(byteArgs, []byte(arg))
 	}
 
-	// logger.Info("byteArgs: ", byteArgs)
+	logger.Info("byteArgs: ", byteArgs)
 	resp, err := cli.Invoke(client.CcRequest{
 		ChaincodeID: ccReq.ChaincodeId,
 		Fcn:         ccReq.FunctionName,
