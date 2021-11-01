@@ -24,7 +24,7 @@ func main() {
 	router.Use(gintool.Logger())
 	router.Use(gin.Recovery())
 
-	api := router.Group("/api")
+	api := router.Group("/api/v1")
 	{
 		api.GET("/test", apiController.Test)
 		api.POST("/chaincode/query", apiController.ChaincodeQuery)

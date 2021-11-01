@@ -46,6 +46,15 @@ func init() {
 
 }
 
+// @Summary 链码query接口
+// @Description 链码query接口
+// @Tags 链码
+// @Accept json
+// @Param ccid body string true "链码ID"
+// @Param event body string true "接口名称"
+// @Param args body string true "参数，用逗号隔开"
+// @Success 200 {object} gintool.RespData desc
+// @Router /api/v1/chaincode/query [post]
 func (a *ApiController) ChaincodeQuery(ctx *gin.Context) {
 
 	var argJson model.ArgJson
@@ -76,6 +85,15 @@ func (a *ApiController) ChaincodeQuery(ctx *gin.Context) {
 	}
 }
 
+// @Summary 链码invoke接口
+// @Description 链码invoke接口
+// @Tags 链码
+// @Accept json
+// @Param ccid body string true "链码ID"
+// @Param event body string true "接口名称"
+// @Param args body string true "参数，用逗号隔开"
+// @Success 200 {object} gintool.RespData desc
+// @Router /api/v1/chaincode/invoke [post]
 func (a *ApiController) ChaincodeInvoke(ctx *gin.Context) {
 
 	var argJson model.ArgJson
