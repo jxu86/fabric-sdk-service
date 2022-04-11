@@ -8,4 +8,3 @@ tmp/
 dbstore
 .vscode/
 channel-artifacts/
-vendor/
